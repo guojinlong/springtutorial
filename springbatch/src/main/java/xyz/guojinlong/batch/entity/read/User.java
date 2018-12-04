@@ -1,4 +1,4 @@
-package xyz.guojinlong.batch.entity;
+package xyz.guojinlong.batch.entity.read;
 
 import lombok.*;
 
@@ -14,13 +14,16 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "people")
-public class People {
+@Table(name = "user", schema = "public")
+public class User {
     @Id
-    @Column(name = "person_id")
-    private String personId;
+    @Column(name = "id")
+    private String id;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
+    @Column(name = "update_time")
+    private String updateTime;
+
 }

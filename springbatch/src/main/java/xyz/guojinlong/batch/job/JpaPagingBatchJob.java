@@ -34,7 +34,7 @@ public class JpaPagingBatchJob {
     @Bean
     public Job jobInJpaPagingWithRepositoryItemWriter(JpaPagingBatchJobListener listener) {
         return jobBuilderFactory
-                .get("jobInJpaPagingWithJdbcBatchItemWriter")
+                .get("jobInJpaPagingWithRepositoryItemWriter")
                 .incrementer(new RunIdIncrementer())
                 .listener(listener)
                 .flow(stepInJpaPagingWithRepositoryItemWriter)

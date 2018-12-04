@@ -1,5 +1,5 @@
 server:
-  port: 6666
+  port: 7777
 spring:
   application:
     name: yc.batch
@@ -15,6 +15,7 @@ spring:
       ddl-auto: update # 自动创建|更新|验证数据库表结构 none表示不更新
     properties:
       hibernate:
+        driver-class-name: org.postgresql.Driver
         dialect: org.hibernate.dialect.PostgreSQLDialect
         default_schema: public
         temp:
@@ -30,14 +31,14 @@ spring:
 logging:
   level:
     org:
-      springframework: WARN
-      hibernate: WARN
+      springframework: DEBUG
+      hibernate: DEBUG
 
 datasource-reader:
 #  type: com.alibaba.druid.pool.DruidDataSource
   url: jdbc:postgresql://localhost:5432/postgres
   username: postgres
   password: postgres
-#  driver-class-name: com.mysql.jdbc.Driver
+  driver-class-name: org.postgresql.Driver
   continue-on-error: false
   sql-script-encoding: UTF-8

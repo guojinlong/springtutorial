@@ -18,10 +18,10 @@ import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import java.util.Map;
 
-@Configuration
-@EnableTransactionManagement
-@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactoryPrimary", transactionManagerRef = "transactionManagerPrimary", basePackages = {
-        "xyz.guojinlong.batch.repository.read"})
+//@Configuration
+//@EnableTransactionManagement
+//@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactoryPrimary", transactionManagerRef = "transactionManagerPrimary", basePackages = {
+//        "xyz.guojinlong.batch.repository"})
 @Slf4j
 public class RepositoryPrimaryConfig {
     @Autowired
@@ -44,7 +44,7 @@ public class RepositoryPrimaryConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) {
         return builder.dataSource(r_ds)
                 .properties(getVendorProperties(r_ds))
-                .packages("xyz.guojinlong.batch.repository.read")
+                .packages("xyz.guojinlong.batch.entity.*")
                 .persistenceUnit("primaryPersistenceUnit")
                 .build();
     }

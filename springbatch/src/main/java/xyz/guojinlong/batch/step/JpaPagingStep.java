@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import xyz.guojinlong.batch.entity.People;
-import xyz.guojinlong.batch.entity.User;
+import xyz.guojinlong.batch.entity.wirte.People;
+import xyz.guojinlong.batch.entity.read.User;
 import xyz.guojinlong.batch.processor.UserPeopleItemProcessor;
 
 @Component

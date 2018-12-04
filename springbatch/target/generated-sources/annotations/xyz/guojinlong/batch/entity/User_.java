@@ -1,5 +1,7 @@
 package xyz.guojinlong.batch.entity;
 
+import xyz.guojinlong.batch.entity.read.User;
+
 import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import xyz.guojinlong.batch.entity.User;
+import xyz.guojinlong.batch.entity.read.User;
 
 import javax.persistence.EntityManagerFactory;
 import java.util.Collections;
@@ -16,14 +16,14 @@ import java.util.Collections;
 public class UserReader {
 
     @Autowired
-    @Qualifier(value = "entityManagerFactoryPrimary")
+//    @Qualifier(value = "entityManagerFactoryPrimary")
     private EntityManagerFactory emf;
 
     @Bean(destroyMethod = "")
     @Qualifier("jpaPagingItemReader")
     public ItemReader<User> jpaPagingItemReader() {
         JpaPagingItemReader<User> reader = new JpaPagingItemReader<User>();
-        String sqlQuery = "select * from user where id like :limit ";
+        String sqlQuery = "select * from public.user where id like :limit ";
         JpaNativeQueryProvider<User> queryProvider = new JpaNativeQueryProvider<User>();
         queryProvider.setSqlQuery(sqlQuery);
         queryProvider.setEntityClass(User.class);
