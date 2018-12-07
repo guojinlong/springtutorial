@@ -34,11 +34,11 @@ logging:
       springframework: DEBUG
       hibernate: DEBUG
 
-datasource-reader:
-#  type: com.alibaba.druid.pool.DruidDataSource
-  url: jdbc:postgresql://localhost:5432/postgres
-  username: postgres
-  password: postgres
-  driver-class-name: org.postgresql.Driver
-  continue-on-error: false
-  sql-script-encoding: UTF-8
+#datasource-reader:
+##  type: com.alibaba.druid.pool.DruidDataSource
+#  url: jdbc:postgresql://localhost:5432/postgres
+#  username: postgres
+#  password: postgres
+#  driver-class-name: org.postgresql.Driver
+#  continue-on-error: false
+#  sql-script-encoding: UTF-8
